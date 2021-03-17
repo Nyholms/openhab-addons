@@ -55,6 +55,8 @@ Channels with type `UNREAD` give the number on unread mails in that folder.
 mail.things:
 
 ```
+Thing mail:smtp:GmailThing [ hostname="smtp.gmail.com", sender="mail@example.com", security="STARTTLS", port=587, username="user", password="pass" ]
+
 Thing mail:smtp:samplesmtp [ hostname="smtp.example.com", sender="mail@example.com", security="SSL", username="user", password="pass" ]
 
 Thing mail:imap:sampleimap [ hostname="imap.example.com", security="SSL", username="user", password="pass" ] {
@@ -104,7 +106,7 @@ Both functions return a boolean as the result of the operation.
 
 Since there is a separate rule action instance for each `smtp` thing, this needs to be retrieved through `getActions(scope, thingUID)`.
 The first parameter always has to be `mail` and the second is the full Thing UID of the SMTP server that should be used.
-Once this action instance is retrieved, you can invoke the action method on it.
+Once this action instance is retrieved, you can invoke the action method on it. (NOTE: The action instance must be invoked at least once in .rules to import the mailActions.)
 
 Please note: All strings are expected to be UTF-8 encoded.
 Using different character sets may produce unwanted results.
