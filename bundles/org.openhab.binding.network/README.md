@@ -48,7 +48,7 @@ network:speedtest:local "SpeedTest 50Mo" @ "Internet" [refreshInterval=20, uploa
 
 Use the following options for a **network:pingdevice**:
 
--   **hostname:** IP address or hostname of the device.
+-   **hostname:** IP address or hostname of the device. [hostname cannot contain the decimal (".") character and who knows what other characters :( ]
 -   **macAddress:** MAC address used for waking the device by the Wake-on-LAN action.
 -   **retry:** After how many refresh interval cycles the device will be assumed to be offline. Default: `1`.
 -   **timeout:** How long the ping will wait for an answer, in milliseconds. Default: `5000` (5 seconds).
